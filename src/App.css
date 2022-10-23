@@ -1,38 +1,62 @@
-.App {
-  text-align: center;
+:root {
+  --card_width: 400px;
+  --row_increment: 10px;
+  --card_border_radius: 16px;
+  --card_small: 26;
+  --card_medium: 33;
+  --card_large: 45;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+  padding-top: 5px;
+  background-color: white;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.pin_container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, var(--card_width));
+  grid-auto-rows: var(--row_increment);
+  justify-content: center;
+
+  background-color: whitesmoke;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.card {
+  padding: 0;
+  margin: 15px 10px;
+  border-radius: var(--card_border_radius);
+  background-color: white;
+}
+
+.card_small{
+  grid-row-end: span var(--card_small);
+}
+
+.card_medium{
+  grid-row-end: span var(--card_medium);
+}
+
+.card_large{
+  grid-row-end: span var(--card_large);
+}
+
+img{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+}
+
+.random_btn{
+  margin: 10px;
 }
