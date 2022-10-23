@@ -6,6 +6,12 @@ function Meme() {
     // const [dataList, setDataList] = useState({data:[]});
     const [memeURLs, setMemeURLs] = useState({memeUrl:[]});
     const [memeList, setMemeList] = useState([]);
+    let memeArr = [];
+
+    useEffect(() => {
+        fetchMeme();
+
+    }, [])
     useEffect(() => {
         loadMeme();
     }, [memeURLs])
@@ -31,7 +37,7 @@ function Meme() {
         return rand;
     }
 
-    let memeArr = [];
+    
 
     const loadMeme = () => {
         memeArr = Array(6).fill(null);
@@ -49,7 +55,7 @@ function Meme() {
         <div>
             <Button sx={{ width: 150, padding: 1, margin: 2 }} variant="outlined"
                 onClick={() => {
-                fetchMeme();
+                loadMeme();
               }}>
                 Random
             </Button>
