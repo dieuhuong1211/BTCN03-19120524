@@ -1,34 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
-import Button from '@mui/material/Button';
-import womanyellingcat from './womanyellingcat.jpg';
-import { display } from '@mui/system';
+import { useEffect } from "react";
+
+import Meme from "./Components/Meme";
 
 function App() {
+  useEffect(() => {
+    document.title = "MEMELIST-19120524"
+  }, [])
+
   return (
-      <div>
-        <Button sx={{ width: 150, padding: 1, margin: 2 }} variant="outlined">Random</Button>
-        <div class="pin_container">
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-          <div class="card card_small">
-          <img src={womanyellingcat} alt="Girl"/>
-          </div>
-        </div>
-      </div>
+    <div className="App">
+      <Meme />
+    </div>
   );
 }
 
